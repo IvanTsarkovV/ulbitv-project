@@ -1,4 +1,7 @@
 {
+  "include": ["**/*.ts", "**/*.tsx", ".eslintrc.js"],
+  "exclude": ["node_modules"],
+  "types": ["node", "jest", "@testing-library/jest-dom"],
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
