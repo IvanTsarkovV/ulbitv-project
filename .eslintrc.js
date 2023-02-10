@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'standard-with-typescript',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
+    'plugin:@typescript-eslint/recommended',
+    'plugin:i18next/recommended'
   ],
   overrides: [
   ],
@@ -18,7 +19,8 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'i18next'
   ],
   rules: {
     semi: [2, 'always'],
@@ -27,6 +29,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
+    'i18next/no-literal-string': 2,
     'import/no-anonymous-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/naming-convention': 'off',
