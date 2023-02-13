@@ -1,5 +1,4 @@
 import { classNames } from './classNames';
-import { describe, expect, it } from '@jest/globals';
 
 describe('classNames', () => {
   it('with one param', async () => {
