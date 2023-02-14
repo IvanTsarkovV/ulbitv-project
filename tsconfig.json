@@ -1,5 +1,5 @@
 {
-  "include": ["./config/jest/setupTests.ts", "**/*.ts", "**/*.tsx", ".eslintrc.js"],
+  "include": ["./config/jest/setupTests.ts", "./config/storybook/main.js", "./config/storybook/preview.js", "**/*.ts", "**/*.tsx", ".eslintrc.js"],
   "exclude": ["node_modules"],
   "types": ["node", "jest", "@testing-library/jest-dom"],
   "compilerOptions": {
