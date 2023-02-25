@@ -1,4 +1,4 @@
-name: CI
+name: linting, testing, building
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   push:
@@ -7,11 +7,10 @@ on:
     branches: [ master ]
 jobs:
   pipeline:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 17.x ]
-        os: [ ubuntu-latest, [ self-hosted, macOS ] ]
         
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +19,7 @@ jobs:
         with: 
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm install
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
