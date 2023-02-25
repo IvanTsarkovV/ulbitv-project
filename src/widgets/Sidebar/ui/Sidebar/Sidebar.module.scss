@@ -9,13 +9,43 @@
   padding: 20px;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-}
-
 .switchers {
   margin-top: auto;
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.collapseBtn {
+  position: relative;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    fill: var(--inverted-secondary-color);
+  }
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .switchers {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .item span {
+    display: none;
+  }
 }
