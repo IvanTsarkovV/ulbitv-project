@@ -32,13 +32,13 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <div className={cls.item}>
           <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.main}>
             <MainIcon />
-            <span>{t('Главная')}</span>
+            <span>{t('Главная страница')}</span>
           </AppLink>
         </div>
         <div className={cls.item}>
           <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about}>
             <AboutIcon />
-            <span>{t('О Сайте')}</span>
+            <span>{t('О сайте')}</span>
           </AppLink>
         </div>
       </div>
