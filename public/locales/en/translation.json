@@ -9,6 +9,9 @@
   "Главная страница": "Main Page",
   "О сайте": "About Us",
   "Войти": "Enter",
+  "Выйти": "Exit",
   "Имя": "Name",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Login Form",
+  "Вы ввели неверный логин или пароль": "Login or password is incorrect"
 }
