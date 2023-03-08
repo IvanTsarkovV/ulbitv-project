@@ -39,6 +39,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/consistent-type-assertions': 'off',
     'react/display-name': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     'react/button-has-type': [2, {
       button: true,
       submit: true,

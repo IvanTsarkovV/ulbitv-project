@@ -17,13 +17,14 @@ import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/Dy
 
 interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
   loginForm: loginReducer
 };
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const username = useSelector(getLoginUserName);
@@ -39,12 +40,15 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     dispatch(loginActions.setPassword(value));
   }, [dispatch]);
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUserName({ username, password }));
-  }, [dispatch, username, password]);
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUserName({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [onSuccess, dispatch, username, password]);
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
+    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text text={t('Форма авторизации')} />
         {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}

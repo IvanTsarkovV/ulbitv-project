@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": { 
+    "first": "Ivan",
+    "lastname": "Tsarkov",
+    "age": "31",
+    "currency": "USD",
+    "country": "Armenia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://loremflickr.com/cache/resized/65535_52682151570_91793b7a9a_z_640_360_nofilter.jpg"
+  }
 }
