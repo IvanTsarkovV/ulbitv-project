@@ -9,16 +9,16 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
 const container = document.getElementById('root');
-const root = createRoot(container);
+const root = createRoot(container || document.body);
 
 root.render(
-  <StoreProvider>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <ThemeProvider>
-          <App/>
-        </ThemeProvider>
-      </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>
+  <BrowserRouter>
+    <StoreProvider>
+        <ErrorBoundary>
+          <ThemeProvider>
+            <App/>
+          </ThemeProvider>
+        </ErrorBoundary>
+    </StoreProvider>
+  </BrowserRouter>
 );

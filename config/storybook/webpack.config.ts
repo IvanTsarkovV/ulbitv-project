@@ -12,12 +12,13 @@ export default ({ config }: { config: webpack.Configuration; }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src')
   };
-  config.resolve.modules.push(paths.src);
-  config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve!.modules!.push(paths.src);
+  config.resolve!.extensions!.push('.ts', '.tsx');
 
-  config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+  // @ts-expect-error will fix
+  config.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
     // eslint-disable-next-line @typescript-eslint/no-base-to-string
-    if (rule.test.toString().includes('svg')) {
+    if (rule.test!.toString().includes('svg')) {
       return {
         ...rule,
         exclude: /\.svg$/i
@@ -27,11 +28,12 @@ export default ({ config }: { config: webpack.Configuration; }) => {
     return rule;
   });
 
-  config.module.rules.push(buildSvgLoader());
-  config.module.rules.push(buildCssLoader(true));
+  config.module!.rules.push(buildSvgLoader());
+  config.module!.rules.push(buildCssLoader(true));
 
-  config.plugins.push(new DefinePlugin({
-    __IS_DEV__: true
+  config.plugins!.push(new DefinePlugin({
+    __IS_DEV__: JSON.stringify(true),
+    __API__: JSON.stringify('')
   }));
 
   return config;

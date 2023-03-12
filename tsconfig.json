@@ -3,6 +3,7 @@
   "exclude": ["node_modules"],
   "types": ["node", "jest", "@testing-library/jest-dom"],
   "compilerOptions": {
+    "strict": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",

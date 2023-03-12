@@ -1,4 +1,3 @@
-import { type DeepPartial } from 'redux';
 import { type StateSchema } from 'app/providers/StoreProvider';
 import { getLoginUserName } from './getLoginUserName';
 
