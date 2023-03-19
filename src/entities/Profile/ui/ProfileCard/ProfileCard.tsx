@@ -3,7 +3,7 @@ import cls from './ProfileCard.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
-import { type Profile } from '../../model/types/Profile';
+import { type Profile } from '../../model/types/profile';
 import { Loader } from 'shared/ui/Loader/ui/Loader';
 
 interface ProfileCardProps {
